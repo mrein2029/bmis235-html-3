@@ -67,3 +67,23 @@ nav a:is(:hover, :focus-visible) img {
     outline: 3px solid #3d592e;
     outline-offset: 2px;
 }
+
+
+/* Trim the Excel screenshot edges and round each navigation button. */
+nav {
+  background-color: #ffe0f2;
+}
+
+nav a {
+  display: inline-block;
+  border-radius: 12px;
+}
+
+nav a img {
+  border-radius: 12px;
+  clip-path: inset(4px round 12px);
+}
+
+nav a:is(:hover, :focus-visible) {
+  outline: 3px solid #3d592e;
+}
