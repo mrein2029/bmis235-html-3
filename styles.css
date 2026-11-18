@@ -10,16 +10,16 @@
    ===================================================================== */
 
 body {
-    font-family: Georgia, "Times New Roman", serif;
-    background-color: #f4efe6;
-    color: #2b2b2b;
+    font-family: Calibri, "Carlito", Arial, sans-serif;
+    background-color: #fff8fc;
+    color: #263620;
     margin: 0;
     padding: 0 20px 40px 20px;
 }
 
 /* the menu at the top of every page */
 nav {
-    background-color: #2b5d8c;
+    background-color: #f0a5ef;
     padding: 14px;
     text-align: center;
 }
@@ -39,7 +39,7 @@ nav a {
 }
 
 h1 {
-    color: #2b5d8c;
+    color: #3d592e;
     text-align: center;
     font-size: 40px;
 }
@@ -54,6 +54,6 @@ p {
 footer {
     text-align: center;
     font-size: 14px;
-    color: #777777;
+    color: #49603e;
     margin-top: 40px;
 }
