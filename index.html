@@ -8,7 +8,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="author" content="Maya Reinemann">
-<title>Home</title>
+<title>The Cravings Corner | Home</title>
 
 <!-- this one line connects the page to the stylesheet -->
 <link rel="stylesheet" href="styles.css">
@@ -28,16 +28,16 @@
     <a href="chocolatechipcake.html"><img src="img/chocolatechipcake.png" alt="chocolatechipcake"></a>
 </nav>
 
-<h1>Home</h1>
+<h1>The Cravings Corner</h1>
 <p>Baked goods in my family and a few of the recipes that I could find.</p>
 <p>I wanted to create a website that showcases different family recipes. This site gives in insight to a little
   background of each of the baked goods I choose and where they come from.</p>
 
-<!-- ===== SHOWCASE ======================================================
-     This box is empty on purpose. In Part 7 you paste an interactive
-     graphic BETWEEN the opening <div> and the closing </div> below.
-     ===================================================================== -->
-<div class=""><!-- HTML: Show three desserts and a spot for their descriptions. -->
+<p><a href="https://swedishspoon.com/strawberry-cake/">Explore a Swedish strawberry cake recipe</a></p>
+
+<!-- Interactive dessert graphic -->
+<div class="showcase">
+<!-- HTML: Show three desserts and a spot for their descriptions. -->
 <section class="bakery-display" aria-label="The Cravings Corner desserts">
   <div class="bakery-grid">
     <button class="bakery-item" type="button" aria-pressed="false"
@@ -73,7 +73,7 @@
     </button>
 
     <button class="bakery-item" type="button" aria-pressed="false"
-      data-description="A slice of layer cake has frosting between the layers and on top.">
+      data-description="Chocolate chip cake is a birthday tradition in my family.">
       <svg viewBox="0 0 100 90" aria-hidden="true" focusable="false">
         <ellipse cx="50" cy="79" rx="39" ry="5" fill="#eec1d9"/>
         <path d="M17 44h66v27q0 5-5 5H22q-5 0-5-5z" fill="#ce875a"/>
@@ -83,7 +83,7 @@
         <path d="m41 39 5-3m8 3 4-2m6-6 5 1" stroke="#fdff5e"
           stroke-width="2.5" stroke-linecap="round"/>
       </svg>
-      <span>Layer cake</span>
+      <span>Chocolate chip cake</span>
     </button>
   </div>
 
@@ -135,7 +135,6 @@
   width: 100%;
   max-width: 112px;
   height: auto;
-  transition: transform 180ms ease;
 }
 
 .showcase .bakery-item:hover svg,
@@ -166,11 +165,6 @@
   text-align: center;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .showcase .bakery-item svg {
-    transition: none;
-  }
-}
 </style>
 
 <script>
@@ -193,7 +187,8 @@
     });
   });
 })();
-</script></div>
+</script>
+</div>
 
 <!-- Footer: Maya Reinemann -->
 <footer>Built by Maya Reinemann &middot; BMIS 235 &middot; <a href="mailto:mreinemann@zagmail.gonzaga.edu">Email me</a></footer>
