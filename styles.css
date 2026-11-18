@@ -58,3 +58,8 @@ footer {
     color: #49603e;
     margin-top: 40px;
 }
+
+nav a:is(:hover, :focus-visible) img {
+    outline: 3px solid #3d592e;
+    outline-offset: 2px;
+}
