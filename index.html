@@ -36,7 +36,163 @@
      This box is empty on purpose. In Part 7 you paste an interactive
      graphic BETWEEN the opening <div> and the closing </div> below.
      ===================================================================== -->
-<div class="showcase"></div>
+<div class=""><!-- HTML: Show three desserts and a spot for their descriptions. -->
+<section class="bakery-display" aria-label="The Cravings Corner desserts">
+  <div class="bakery-grid">
+    <button class="bakery-item" type="button" aria-pressed="false"
+      data-description="Strawberry shortcake layers fluffy cake, whipped cream, and juicy strawberries.">
+      <svg viewBox="0 0 100 90" aria-hidden="true" focusable="false">
+        <ellipse cx="50" cy="79" rx="39" ry="5" fill="#eec1d9"/>
+        <rect x="16" y="39" width="68" height="36" rx="7" fill="#eeb46d"/>
+        <path d="M16 53h68v10H16z" fill="#fff9ec"/>
+        <path d="M16 42c0-12 68-12 68 0v6c-8 5-15-2-23 2-9 4-17-4-25-1-8 3-14 2-20-1z" fill="#fff9ec"/>
+        <path d="M37 29c0-11 26-11 26 0 0 7-9 15-13 15s-13-8-13-15z" fill="#d93458"/>
+        <path d="m44 21 6 4 6-4-6-5z" fill="#43834e"/>
+        <circle cx="44" cy="30" r="1.3" fill="#fff2bb"/>
+        <circle cx="55" cy="32" r="1.3" fill="#fff2bb"/>
+        <circle cx="49" cy="37" r="1.3" fill="#fff2bb"/>
+      </svg>
+      <span>Strawberry shortcake</span>
+    </button>
+
+    <button class="bakery-item" type="button" aria-pressed="false"
+      data-description="This golden cookie gets its pops of color from candy-coated M&amp;M’s.">
+      <svg viewBox="0 0 100 90" aria-hidden="true" focusable="false">
+        <ellipse cx="50" cy="79" rx="36" ry="5" fill="#eec1d9"/>
+        <path d="M20 35c5-13 16-18 30-18 19 0 33 11 34 28 2 18-13 30-33 31-21 1-36-13-35-29 0-4 2-8 4-12z"
+          fill="#e5a45d" stroke="#a96139" stroke-width="3"/>
+        <circle cx="35" cy="36" r="6" fill="#ca354d"/>
+        <circle cx="57" cy="30" r="6" fill="#2776b6"/>
+        <circle cx="69" cy="47" r="6" fill="#edcf42"/>
+        <circle cx="48" cy="48" r="7" fill="#478749"/>
+        <circle cx="30" cy="56" r="5" fill="#2776b6"/>
+        <circle cx="55" cy="64" r="6" fill="#ca354d"/>
+      </svg>
+      <span>M&amp;M cookie</span>
+    </button>
+
+    <button class="bakery-item" type="button" aria-pressed="false"
+      data-description="A slice of layer cake has frosting between the layers and on top.">
+      <svg viewBox="0 0 100 90" aria-hidden="true" focusable="false">
+        <ellipse cx="50" cy="79" rx="39" ry="5" fill="#eec1d9"/>
+        <path d="M17 44h66v27q0 5-5 5H22q-5 0-5-5z" fill="#ce875a"/>
+        <path d="M17 54h66v7H17zm0 13h66v5H17z" fill="#ffcfdf"/>
+        <path d="m17 44 48-23q12 6 18 23z" fill="#ff8cce"/>
+        <path d="M17 43h66v4c-8 6-13-2-22 2-11 4-16-3-25 1-9 3-15 0-19-2z" fill="#f069b4"/>
+        <path d="m41 39 5-3m8 3 4-2m6-6 5 1" stroke="#fdff5e"
+          stroke-width="2.5" stroke-linecap="round"/>
+      </svg>
+      <span>Layer cake</span>
+    </button>
+  </div>
+
+  <div class="bakery-note" role="status">Tap a dessert to learn more.</div>
+</section>
+
+<style>
+/* CSS: Use the brand colors and make the dessert pictures pop on hover or selection. */
+.showcase .bakery-display {
+  box-sizing: border-box;
+  max-width: 560px;
+  margin: 0 auto;
+  padding: clamp(8px, 3vw, 22px);
+  border-radius: 18px;
+  background: #ff8cce;
+  color: #402038;
+  font-family: Calibri, Arial, sans-serif;
+}
+
+.showcase .bakery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(4px, 2vw, 12px);
+}
+
+.showcase .bakery-item {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  justify-items: center;
+  align-items: start;
+  gap: 4px;
+  min-width: 0;
+  padding: 8px 3px;
+  border: 2px solid transparent;
+  border-radius: 14px;
+  background: #fff5fa;
+  color: inherit;
+  font: inherit;
+  font-size: clamp(0.75rem, 3.5vw, 1rem);
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+  overflow-wrap: anywhere;
+  cursor: pointer;
+}
+
+.showcase .bakery-item svg {
+  display: block;
+  width: 100%;
+  max-width: 112px;
+  height: auto;
+  transition: transform 180ms ease;
+}
+
+.showcase .bakery-item:hover svg,
+.showcase .bakery-item:focus-visible svg,
+.showcase .bakery-item[aria-pressed="true"] svg {
+  transform: translateY(-5px) scale(1.1);
+}
+
+.showcase .bakery-item[aria-pressed="true"] {
+  border-color: #402038;
+  background: #fdff5e;
+}
+
+.showcase .bakery-item:focus-visible {
+  outline: 2px solid #402038;
+  outline-offset: 2px;
+}
+
+.showcase .bakery-note {
+  display: grid;
+  place-items: center;
+  min-height: 3em;
+  margin-top: 12px;
+  padding: 8px 10px;
+  border-radius: 12px;
+  background: #fff5fa;
+  line-height: 1.3;
+  text-align: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .showcase .bakery-item svg {
+    transition: none;
+  }
+}
+</style>
+
+<script>
+/* JavaScript: Highlight the selected dessert and show its description. */
+(() => {
+  const display = document.currentScript.parentElement.querySelector(".bakery-display");
+  const buttons = display.querySelectorAll(".bakery-item");
+  const note = display.querySelector(".bakery-note");
+  const prompt = note.textContent;
+
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const wasSelected = button.getAttribute("aria-pressed") === "true";
+
+      buttons.forEach((item) => {
+        item.setAttribute("aria-pressed", String(item === button && !wasSelected));
+      });
+
+      note.textContent = wasSelected ? prompt : button.dataset.description;
+    });
+  });
+})();
+</script></div>
 
 <!-- Footer: Maya Reinemann -->
 <footer>Built by Maya Reinemann &middot; BMIS 235 &middot; <a href="mailto:mreinemann@zagmail.gonzaga.edu">Email me</a></footer>
