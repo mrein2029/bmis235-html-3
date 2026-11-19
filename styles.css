@@ -21,24 +21,27 @@ body {
 
 /* the menu at the top of every page */
 nav {
-    background-color: #f0a5ef;
+    background-color: #ffe0f2;
     padding: 14px;
     text-align: center;
     border-radius: 16px;
 }
 
-/* every image inside the menu is forced to the same height.
-   If your images still look different sizes, their WIDTHS are
-   different: go back to Excel and make every cell the same size. */
-nav img {
-    height: 50px;
+/* Crop the screenshot edges so the pink reaches the yellow border. */
+nav a {
+    display: inline-block;
     margin: 4px;
     vertical-align: middle;
+    overflow: hidden;
+    border: 2px solid #fdff5e;
+    border-radius: 12px;
+    text-decoration: none;
 }
 
-/* no underline or border around the image links */
-nav a {
-    text-decoration: none;
+nav a img {
+    display: block;
+    height: 50px;
+    margin: -4px;
 }
 
 h1 {
@@ -63,27 +66,7 @@ footer {
     border-top: 1px solid #edb7e8;
 }
 
-nav a:is(:hover, :focus-visible) img {
+nav a:is(:hover, :focus-visible) {
     outline: 3px solid #3d592e;
     outline-offset: 2px;
-}
-
-
-/* Trim the Excel screenshot edges and round each navigation button. */
-nav {
-  background-color: #ffe0f2;
-}
-
-nav a {
-  display: inline-block;
-  border-radius: 12px;
-}
-
-nav a img {
-  border-radius: 12px;
-  clip-path: inset(4px round 12px);
-}
-
-nav a:is(:hover, :focus-visible) {
-  outline: 3px solid #3d592e;
 }
